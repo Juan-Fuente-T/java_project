@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Veterinarios</title>
+</head>
+<body>
+<!--/*@thymesVar id="vet" type="guru.springframework.sfgpetclinic.model.Vet"*/-->
+<h1 th:text="'Listado de Veterinarios'">Listado de Veterinarios...</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+    </tr>
+    <tbody>
+    <tr th:each="vet : ${vets}">
+        <td th:text="${vet?.id}">1</td>
+        <td th:text="${vet?.firstName}">Joe</td>
+        <td th:text="${vet?.lastName}">Buck</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
